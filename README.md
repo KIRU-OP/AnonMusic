@@ -58,7 +58,7 @@
 <h2 align="center">📰 ᴅᴇᴘʟᴏʏ ᴛᴏ ʜᴇʀᴏᴋᴜ 📰</h2>
 
 <p align="center">
-  <a href="https://dashboard.heroku.com/new?template=https://github.com/Vibe-Bots/AnonMusic">
+  <a href="https://dashboard.heroku.com/new?template=https://github.com/vikashkohli7827/AnonMusic">
     <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/>
   </a>
 </p>
@@ -151,7 +151,7 @@ bash start
 | ᴍᴏɴɢᴏ_ᴜʀʟ          | ᴍᴏɴɢᴏᴅʙ ᴜʀɪ                                               |
 | ᴏᴡɴᴇʀ_ɪᴅ           | ʙᴏᴛ ᴏᴡɴᴇʀ ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ                                     |
 | sᴇssɪᴏɴ_sᴛʀɪɴɢ     | ᴘʏʀᴏɢʀᴀᴍ sᴛʀɪɴɢ sᴇssɪᴏɴ                                   |
-| ʏᴏᴜᴛᴜʙᴇ ᴀᴘɪ - ʙᴀsᴇ_ᴀᴘɪ_ᴋᴇʏ | ɢᴇᴛ ғʀᴏᴍ - [@KeyMakerRoBot](https://t.me/KeyMakerRoBot)
+| ʏᴏᴜᴛᴜʙᴇ ᴀᴘɪ - ʙᴀsᴇ_ᴀᴘɪ_ᴋᴇʏ | ɢᴇᴛ ғʀᴏᴍ - [@KeyMakerRoBot]()
 
 ---
 
@@ -159,9 +159,9 @@ bash start
 
 | ɴᴀᴍᴇ | ʀᴏʟᴇ |
 |------|------|
-| [sᴀᴄʜɪɴ sᴀɴᴀᴛᴀɴɪ](https://t.me/MyselfSachinOp) | ᴄᴏʀᴇ ᴅᴇᴠᴇʟᴏᴘᴇʀ |
-| [sᴄʏxᴅ](https://t.me/ScyxD) | ʏᴏᴜᴛᴜʙᴇ ᴘʀᴏxʏ ᴍᴀɢɪᴄ |
-| [ɴᴏᴠɪᴀ](https://t.me/ScyxD) | ᴍᴀɪɴᴛᴀɪɴᴇʀ |
+| [sᴀᴄʜɪɴ sᴀɴᴀᴛᴀɴɪ](https://t.me) | ᴄᴏʀᴇ ᴅᴇᴠᴇʟᴏᴘᴇʀ |
+| [sᴄʏxᴅ](https://t.me/ll_GOD_FATHER_BABU_ll) | ʏᴏᴜᴛᴜʙᴇ ᴘʀᴏxʏ ᴍᴀɢɪᴄ |
+| [ɴᴏᴠɪᴀ](https://t.me/ll_GOD_FATHER_BABU_ll) | ᴍᴀɪɴᴛᴀɪɴᴇʀ |
 | sᴀɴᴀᴛᴀɴɪ ᴛᴇᴀᴍ | ʙᴀsᴇ ɪɴsᴘɪʀᴀᴛɪᴏɴ |
 
 ---
@@ -169,10 +169,10 @@ bash start
 ## 💬 sᴜᴘᴘᴏʀᴛ & ᴜᴘᴅᴀᴛᴇs
 
 <p align="center">
-  <a href="https://telegram.me/VIBEBOTSSUPPORT"><img src="https://img.shields.io/badge/Support-Group-blue?style=for-the-badge&logo=telegram"></a>
-  <a href="https://telegram.me/SANATANI_TECH"><img src="https://img.shields.io/badge/Updates-@SANATANI_TECH-blue?style=for-the-badge&logo=telegram"></a>
-  <a href="https://telegram.me/SPOTIFY_TECH"><img src="https://img.shields.io/badge/Updates-@SPOTIFY_TECH-blue?style=for-the-badge&logo=telegram"></a>
-  <a href="https://telegram.me/VIBEBOTS"><img src="https://img.shields.io/badge/Updates-@VIBEBOTS-blue?style=for-the-badge&logo=telegram"></a>
+  <a href="https://t.me/ll_GOD_ABOUT_ll"><img src="https://img.shields.io/badge/Support-Group-blue?style=for-the-badge&logo=telegram"></a>
+  <a href="https://telegram.me/SANATANI_TECH"><img src="https://img.shields.io/badge/Updates-@llGOD_FATHER_BABU_ll?style=for-the-badge&logo=telegram"></a>
+  <a href="https://t.me/ll_GOD_ABOUT_ll"><img src="https://img.shields.io/badge/Updates-@SPOTIFY_TECH-blue?style=for-the-badge&logo=telegram"></a>
+  <a href="https://t.me/ll_GOD_ABOUT_ll"><img src="https://img.shields.io/badge/Updates-@VIBEBOTS-blue?style=for-the-badge&logo=telegram"></a>
   <a href="https://telegram.me/YT_API"><img src="https://img.shields.io/badge/Updates-@YT_API-blue?style=for-the-badge&logo=telegram"></a>
 </p>
 
