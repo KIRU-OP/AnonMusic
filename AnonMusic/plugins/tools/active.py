@@ -5,10 +5,9 @@ import shutil
 from pyrogram import Client, filters
 from github import Github, BadCredentialsException, GithubException
 from AnonMusic import app
+from config import GITHUB_TOKEN
 
 GITHUB_USERNAME = "Vibe-Bots"
-
-GITHUB_TOKEN = getenv("GITHUB_TOKEN")
 
 COMMIT_MESSAGE = "Refactor: VibeApi Integration & Optimized Media Engine"
 
