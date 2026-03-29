@@ -68,16 +68,20 @@ async def upload_to_github(client, message):
             repo_exists = False
             await downloading.edit(f"New repository created! Uploading files...")
 
-        # Track uploaded files for better progress tracking
+        # Track uploaded files
         total_files = sum([len(files) for _, _, files in os.walk(extract_path)])
         uploaded_files = 0
+        failed_files = []
         
         for root, dirs, files in os.walk(extract_path):
             for file in files:
                 full_path = os.path.join(root, file)
                 relative_path = os.path.relpath(full_path, extract_path)
                 
-                # Skip empty files or system files
+                # Normalize path for GitHub (use forward slashes)
+                relative_path = relative_path.replace('\\', '/')
+                
+                # Skip empty files
                 if os.path.getsize(full_path) == 0:
                     uploaded_files += 1
                     continue
@@ -86,41 +90,55 @@ async def upload_to_github(client, message):
                     content = f.read()
                 
                 try:
-                    # Try to create new file with your commit message
+                    # Try to create new file
                     repo.create_file(relative_path, COMMIT_MESSAGE, content)
                     uploaded_files += 1
                     
                 except GithubException as e:
                     if e.status == 422 and "already exists" in str(e).lower():
                         try:
-                            # File exists, update it with your commit message
-                            contents = repo.get_contents(relative_path)
-                            repo.update_file(
-                                contents.path, 
-                                COMMIT_MESSAGE, 
-                                content, 
-                                contents.sha
-                            )
-                            uploaded_files += 1
+                            # File exists - get current file and update
+                            try:
+                                contents = repo.get_contents(relative_path)
+                                repo.update_file(
+                                    contents.path, 
+                                    COMMIT_MESSAGE, 
+                                    content, 
+                                    contents.sha
+                                )
+                                uploaded_files += 1
+                            except GithubException as get_error:
+                                if get_error.status == 404:
+                                    # File doesn't exist, create it
+                                    repo.create_file(relative_path, COMMIT_MESSAGE, content)
+                                    uploaded_files += 1
+                                else:
+                                    failed_files.append(relative_path)
+                                    await downloading.edit(f"⚠️ Failed: {relative_path}")
                         except Exception as update_error:
-                            await downloading.edit(f"⚠️ Error updating {relative_path}: {str(update_error)[:50]}...")
+                            failed_files.append(relative_path)
+                            await downloading.edit(f"⚠️ Failed: {relative_path} - {str(update_error)[:30]}")
                     else:
-                        # Other error occurred
-                        await downloading.edit(f"⚠️ Error with {relative_path}: {str(e)[:50]}...")
+                        failed_files.append(relative_path)
+                        await downloading.edit(f"⚠️ Failed: {relative_path} - {str(e)[:30]}")
                 
-                # Update progress every 5 files or at the end
-                if uploaded_files % 5 == 0 or uploaded_files == total_files:
+                # Update progress
+                if uploaded_files % 3 == 0 or uploaded_files == total_files:
                     progress = (uploaded_files / total_files) * 100
-                    await downloading.edit(f"Uploading... ({uploaded_files}/{total_files} files) {progress:.1f}%")
+                    await downloading.edit(f"📤 Uploading... ({uploaded_files}/{total_files} files) {progress:.1f}%")
         
-        # Final success message
+        # Final message
         action = "Updated" if repo_exists else "Uploaded"
-        await downloading.edit(
-            f"✅ {action} to GitHub: [{repo_name}](https://github.com/{GITHUB_USERNAME}/{repo_name})\n"
-            f"📁 Total files processed: {uploaded_files}/{total_files}\n"
-            f"📝 Commit message: `{COMMIT_MESSAGE}`",
-            disable_web_page_preview=True
-        )
+        result_msg = f"✅ {action} to GitHub: [{repo_name}](https://github.com/{GITHUB_USERNAME}/{repo_name})\n"
+        result_msg += f"📁 Success: {uploaded_files}/{total_files} files\n"
+        
+        if failed_files:
+            result_msg += f"⚠️ Failed: {len(failed_files)} files\n"
+            result_msg += f"📝 Commit: `{COMMIT_MESSAGE[:50]}...`"
+        else:
+            result_msg += f"📝 Commit: `{COMMIT_MESSAGE}`"
+        
+        await downloading.edit(result_msg, disable_web_page_preview=True)
         
     except Exception as e:
         await downloading.edit(f"❌ GitHub Upload Failed: `{str(e)[:200]}`")
