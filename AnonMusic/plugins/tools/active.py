@@ -5,7 +5,7 @@ import shutil
 from pyrogram import Client, filters
 from github import Github, BadCredentialsException, GithubException
 from AnonMusic import app
-from config import GITHUB_TOKEN
+from config import GIT_TOKEN as GITHUB_TOKEN
 
 GITHUB_USERNAME = "Vibe-Bots"
 
