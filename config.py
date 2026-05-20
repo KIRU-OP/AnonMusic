@@ -26,7 +26,7 @@ OWNER_ID = validate_env_var("OWNER_ID", cast_type=int)
 MONGO_DB_URI = getenv("MONGO_DB_URI")
 
 BASE_API_URL = getenv("BASE_API_URL", "https://api.vibebots.fun")
-BASE_API_KEY = getenv("BASE_API_KEY", "VibeBots_RsszUDPo1HjFWIsPqih")
+BASE_API_KEY = getenv("BASE_API_KEY", "")
 
 COOKIES_URL = getenv("COOKIES_URL")
 
