@@ -27,7 +27,7 @@ class SensitiveDataFilter(logging.Filter):
 logging.getLogger().addFilter(SensitiveDataFilter())
 
 # Note: Agar ye API band hai toh yt-dlp automatically handle karega
-API_URL = "https://vip-bot.up.railway.app"
+API_URL = "https://youtube-mini.up.railway.app"
 
 # --- UTILS ---
 def get_clean_id(link: str) -> Optional[str]:
