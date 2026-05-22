@@ -25,7 +25,7 @@ LOGGER_ID = validate_env_var("LOGGER_ID", cast_type=int)
 OWNER_ID = validate_env_var("OWNER_ID", cast_type=int)
 MONGO_DB_URI = getenv("MONGO_DB_URI")
 
-BASE_API_URL = getenv("BASE_API_URL", "https://youtube-mini.up.railway.app")
+BASE_API_URL = getenv("BASE_API_URL", "https://t.me/VibeBots")
 BASE_API_KEY = getenv("BASE_API_KEY", "VibeBots_RsszUDPo1HjFWIsPqih")
 
 COOKIES_URL = getenv("COOKIES_URL")
